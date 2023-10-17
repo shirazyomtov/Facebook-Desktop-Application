@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\cef.redist.x86.87.1.13\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.87.1.13\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.87.1.13\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.87.1.13\build\cef.redist.x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{905D5BF1-A7E4-4440-85E8-84772F5312D5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BasicFacebookFeatures</RootNamespace>
+    <AssemblyName>BasicFacebookFeatures</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp, Version=87.1.132.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.87.1.132\lib\net452\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=87.1.132.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.87.1.132\lib\net452\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms, Version=87.1.132.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.WinForms.87.1.132\lib\net452\CefSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\..\..\..\..\C21 Ex01 ShovalOvadia 205516982 NofHagage 203827431\C21 Ex01 ShovalOvadia 205516982 NofHagage 203827431\FBApi\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="FbGraphApiWrapper">
+      <HintPath>..\..\..\..\..\C21 Ex01 ShovalOvadia 205516982 NofHagage 203827431\C21 Ex01 ShovalOvadia 205516982 NofHagage 203827431\FBApi\FbGraphApiWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlbumStatisticsByMonthsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlbumStatisticsByMonthsForm.Designer.cs">
+      <DependentUpon>AlbumStatisticsByMonthsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlbumStatisticsByYearsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlbumStatisticsByYearsForm.Designer.cs">
+      <DependentUpon>AlbumStatisticsByYearsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindMyMatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindMyMatchForm.Designer.cs">
+      <DependentUpon>FindMyMatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFactory.cs" />
+    <Compile Include="FriendsFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FriendsFilterForm.Designer.cs">
+      <DependentUpon>FriendsFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FriendsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FriendsForm.Designer.cs">
+      <DependentUpon>FriendsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlbumsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlbumsForm.Designer.cs">
+      <DependentUpon>AlbumsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupsForm.Designer.cs">
+      <DependentUpon>GroupsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LikesPagesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LikesPagesForm.Designer.cs">
+      <DependentUpon>LikesPagesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyOptionalMatchesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyOptionalMatchesForm.Designer.cs">
+      <DependentUpon>MyOptionalMatchesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectedMatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectedMatchForm.Designer.cs">
+      <DependentUpon>SelectedMatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostsForm.Designer.cs">
+      <DependentUpon>PostsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlbumStatisticsByMonthsForm.resx">
+      <DependentUpon>AlbumStatisticsByMonthsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlbumStatisticsByYearsForm.resx">
+      <DependentUpon>AlbumStatisticsByYearsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindMyMatchForm.resx">
+      <DependentUpon>FindMyMatchForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FriendsFilterForm.resx">
+      <DependentUpon>FriendsFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FriendsForm.resx">
+      <DependentUpon>FriendsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlbumsForm.resx">
+      <DependentUpon>AlbumsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupsForm.resx">
+      <DependentUpon>GroupsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LikesPagesForm.resx">
+      <DependentUpon>LikesPagesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyOptionalMatchesForm.resx">
+      <DependentUpon>MyOptionalMatchesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectedMatchForm.resx">
+      <DependentUpon>SelectedMatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostsForm.resx">
+      <DependentUpon>PostsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.Group.datasource" />
+    <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.Page.datasource" />
+    <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.User.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FacebookWinFormsAppLogic\FacebookWinFormsAppLogic.csproj">
+      <Project>{0ef400f7-efdd-46ac-b5e6-855cb5965318}</Project>
+      <Name>FacebookWinFormsAppLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Friends.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacebookBackgroundImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacebookIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MicrosoftTeams-image %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundimage.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\post.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\postImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconGroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconPost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\albums.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Like.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowOfBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\friendsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-library.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\external-like-modern-dating-flaticons-flat-flat-icons-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\external-match-dating-app-flaticons-lineal-color-flat-icons-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\external-facebook-social-media-justicon-lineal-color-justicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\two-hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crowd--v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thumb-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera-with-flash-emoji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-gallery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\friendsFilter.jfif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\cef.redist.x64.87.1.13\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.87.1.13\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.87.1.13\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.87.1.13\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.targets'))" />
+  </Target>
+  <Import Project="..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.targets')" />
+</Project>

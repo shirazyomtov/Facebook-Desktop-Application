@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EF400F7-EFDD-46AC-B5E6-855CB5965318}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FacebookWinFormsAppLogic</RootNamespace>
+    <AssemblyName>FacebookWinFormsAppLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlbumStatisticsByMonthsLogic.cs" />
+    <Compile Include="AlbumStatisticsByYearsLogic.cs" />
+    <Compile Include="AlbumStatisticsLogic.cs" />
+    <Compile Include="Age.cs" />
+    <Compile Include="FilterByCitiesStrategy.cs" />
+    <Compile Include="FilterByGenderStrategy.cs" />
+    <Compile Include="FindMyMatchFacade.cs" />
+    <Compile Include="FindMyMatchLogic.cs" />
+    <Compile Include="FriendLogic.cs" />
+    <Compile Include="FriendsFilter.cs" />
+    <Compile Include="IMatchStrategy.cs" />
+    <Compile Include="SortedAlbumsByDifferentCategoriesLogic.cs" />
+    <Compile Include="UserLogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Facebook">
+      <HintPath>..\..\..\..\..\C21 Ex01 ShovalOvadia 205516982 NofHagage 203827431\C21 Ex01 ShovalOvadia 205516982 NofHagage 203827431\FBApi\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="FbGraphApiWrapper">
+      <HintPath>..\..\..\..\..\C21 Ex01 ShovalOvadia 205516982 NofHagage 203827431\C21 Ex01 ShovalOvadia 205516982 NofHagage 203827431\FBApi\FbGraphApiWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
